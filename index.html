@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RF Properties — Property Development & Trades, County Durham</title>
+  <meta name="description" content="RF Properties: local property development, joinery, scaffolding, renovation and handyman services across NW County Durham. Based in Dipton. Call us today." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RF Properties — Property Development & Trades, County Durham" />
+  <meta property="og:description" content="Local property development, joinery, scaffolding, renovation and handyman services across NW County Durham." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rfproperties.co.uk" />
+  <meta property="og:image" content="https://rfproperties.co.uk/assets/share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;900&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RF Properties",
+    "description": "Property development, joinery, scaffolding, renovation and handyman services.",
+    "url": "https://rfproperties.co.uk",
+    "telephone": "+447526502794",
+    "email": "hello@rfproperties.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dipton",
+      "addressRegion": "County Durham",
+      "addressCountry": "GB"
+    },
+    "areaServed": ["Dipton","Consett","Stanley","Lanchester","Burnopfield","Annfield Plain","Leadgate","Durham"]
+  }
+  </script>
+
+  <style>
+    /* ── Tokens ─────────────────────────────────────────────── */
+    :root {
+      --slate:   #1e2a35;
+      --plaster: #f0ece4;
+      --steel:   #5c7a8a;
+      --oak:     #a07b50;
+      --white:   #ffffff;
+      --text:    #1e2a35;
+      --muted:   #6b7b86;
+      --gap:     clamp(1.5rem, 4vw, 3rem);
+      --r:       4px;
+    }
+
+    /* ── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      background: var(--plaster);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ── Typography ─────────────────────────────────────────── */
+    h1, h2, h3 {
+      font-family: 'Archivo Expanded', sans-serif;
+      line-height: 1.15;
+    }
+    h1 { font-size: clamp(2rem, 6vw, 3.75rem); font-weight: 900; }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.15rem; font-weight: 700; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── Layout helpers ─────────────────────────────────────── */
+    .container { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+    section { padding-block: clamp(3rem, 8vw, 6rem); }
+
+    /* ── Buttons ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--r);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--oak); color: var(--white); }
+    .btn-primary:hover { background: #8a6940; }
+    .btn-outline { background: transparent; color: var(--white); border-color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--slate); }
+    .btn-quote {
+      background: var(--oak);
+      color: var(--white);
+      font-size: 1.05rem;
+      padding: 1rem 2rem;
+      border: none;
+    }
+    .btn-quote:hover { background: #8a6940; }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--slate);
+      color: var(--white);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 1rem;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo svg { width: 40px; height: 40px; }
+    .nav-logo-text {
+      font-family: 'Archivo Expanded', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .btn { padding: 0.5rem 1.25rem; font-size: 0.9rem; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      color: var(--white);
+    }
+
+    @media (max-width: 680px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-block: 1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-inner { flex-wrap: wrap; }
+    }
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    #hero {
+      background: var(--slate);
+      color: var(--white);
+      padding-block: clamp(4rem, 10vw, 8rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      align-items: center;
+    }
+    .hero-eyebrow {
+      color: var(--oak);
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      margin-top: 1rem;
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      max-width: 44ch;
+    }
+    .hero-actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hero-phone {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .hero-phone a { color: var(--oak); font-weight: 600; }
+    /* Scaffold frame motif */
+    .hero-motif {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .motif-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r);
+      padding: 1.25rem;
+      position: relative;
+    }
+    .motif-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 10px; height: 10px;
+      border-top: 2px solid var(--oak);
+      border-left: 2px solid var(--oak);
+    }
+    .motif-card::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; right: -1px;
+      width: 10px; height: 10px;
+      border-bottom: 2px solid var(--oak);
+      border-right: 2px solid var(--oak);
+    }
+    .motif-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      color: var(--oak);
+      line-height: 1;
+    }
+    .motif-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 680px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-motif { display: none; }
+    }
+
+    /* ── Quote CTA bar ──────────────────────────────────────── */
+    #quote-bar {
+      background: var(--oak);
+      color: var(--white);
+      text-align: center;
+      padding-block: 1.25rem;
+    }
+    #quote-bar p { font-size: 1rem; }
+    #quote-bar strong { font-weight: 700; }
+    #quote-bar-btn {
+      margin-top: 0.75rem;
+      background: var(--white);
+      color: var(--oak);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: var(--r);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #quote-bar-btn:hover { background: var(--plaster); }
+
+    /* ── Services ───────────────────────────────────────────── */
+    #services { background: var(--white); }
+    .services-intro { margin-bottom: 3rem; }
+    .services-intro p { color: var(--muted); max-width: 60ch; margin-top: 0.75rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      border: 1px solid #ddd;
+      border-radius: var(--r);
+      padding: 1.75rem;
+      position: relative;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 14px; height: 14px;
+      border-top: 3px solid var(--oak);
+      border-left: 3px solid var(--oak);
+    }
+    .service-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .service-card h3 { margin-bottom: 0.5rem; }
+    .service-card p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ── About / Team ───────────────────────────────────────── */
+    #about { background: var(--plaster); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      align-items: center;
+    }
+    .about-text p { color: var(--muted); margin-top: 0.75rem; max-width: 56ch; }
+    .about-text p + p { margin-top: 1rem; }
+    .team-cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .team-card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      border-left: 4px solid var(--oak);
+    }
+    .team-card h3 { margin-bottom: 0.25rem; }
+    .team-role { color: var(--oak); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .team-bio { color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem; }
+
+    @media (max-width: 680px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Work / Gallery ─────────────────────────────────────── */
+    #work { background: var(--slate); color: var(--white); }
+    #work h2 { color: var(--white); }
+    #work .section-sub { color: rgba(255,255,255,0.65); margin-top: 0.5rem; margin-bottom: 2.5rem; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .gallery-item {
+      border-radius: var(--r);
+      overflow: hidden;
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      min-height: 220px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .gallery-placeholder {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.35);
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gallery-caption {
+      padding: 0.9rem 1rem;
+    }
+    .gallery-caption strong { font-size: 0.9rem; color: var(--white); }
+    .gallery-caption span { display: block; font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; }
+
+    /* ── Coverage area ──────────────────────────────────────── */
+    #area { background: var(--white); }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      align-items: start;
+    }
+    .area-text p { color: var(--muted); margin-top: 0.75rem; max-width: 50ch; }
+    .area-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .area-tag {
+      background: var(--plaster);
+      border: 1px solid #ddd;
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .area-note {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 680px) {
+      .area-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Contact ────────────────────────────────────────────── */
+    #contact { background: var(--plaster); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      align-items: start;
+    }
+    .contact-info p { color: var(--muted); margin-top: 0.75rem; }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .contact-detail-icon {
+      background: var(--oak);
+      color: var(--white);
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .contact-detail-body strong { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+    .contact-detail-body a, .contact-detail-body p { font-weight: 500; color: var(--text); }
+    .contact-detail-body a:hover { color: var(--oak); }
+
+    /* Form */
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 2rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #ddd;
+      border-radius: var(--r);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1rem;
+      background: var(--plaster);
+      transition: border-color 0.2s;
+      color: var(--text);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--steel);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    /* Honeypot */
+    .hp-field { display: none !important; }
+    .form-submit { width: 100%; justify-content: center; }
+    .form-msg {
+      display: none;
+      padding: 0.9rem 1rem;
+      border-radius: var(--r);
+      font-weight: 500;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .form-msg.success { background: #e8f5e9; color: #2e7d32; display: block; }
+    .form-msg.error   { background: #fdecea; color: #c62828; display: block; }
+
+    @media (max-width: 680px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      background: var(--slate);
+      color: rgba(255,255,255,0.65);
+      padding-block: 2.5rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-brand {
+      font-family: 'Archivo Expanded', sans-serif;
+      font-weight: 900;
+      color: var(--white);
+      font-size: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .social-link {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.65);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover { border-color: var(--white); color: var(--white); }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.25rem;
+    }
+
+    /* ── Quote modal ────────────────────────────────────────── */
+    #quote-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.75);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #quote-modal.open { display: flex; }
+    .quote-modal-inner {
+      background: var(--white);
+      border-radius: var(--r);
+      overflow: hidden;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .quote-modal-close {
+      position: absolute;
+      top: 0.75rem; right: 0.75rem;
+      background: rgba(0,0,0,0.4);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .quote-modal-close:hover { background: rgba(0,0,0,0.65); }
+    .quote-modal-inner img {
+      width: 100%;
+      display: block;
+    }
+    .quote-modal-body {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .quote-modal-body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .quote-modal-body p { color: var(--muted); font-size: 0.95rem; }
+    .quote-modal-body .btn { margin-top: 1rem; }
+
+    /* Focus / a11y */
+    :focus-visible {
+      outline: 3px solid var(--oak);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────────── -->
+<nav aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="RF Properties home">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Scaffold joint motif -->
+        <rect x="2" y="2" width="36" height="36" rx="3" fill="#1e2a35" stroke="#a07b50" stroke-width="1.5"/>
+        <!-- Horizontal bar -->
+        <rect x="6" y="18.5" width="28" height="3" rx="1.5" fill="#5c7a8a"/>
+        <!-- Vertical bar -->
+        <rect x="18.5" y="6" width="3" height="28" rx="1.5" fill="#5c7a8a"/>
+        <!-- Joints -->
+        <circle cx="20" cy="20" r="4" fill="#a07b50"/>
+        <circle cx="20" cy="20" r="2" fill="#1e2a35"/>
+        <!-- R -->
+        <text x="7" y="16" font-family="Arial Black, sans-serif" font-size="8" font-weight="900" fill="white">R</text>
+        <!-- F -->
+        <text x="24" y="36" font-family="Arial Black, sans-serif" font-size="8" font-weight="900" fill="white">F</text>
+      </svg>
+      <span class="nav-logo-text">RF Properties</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav(this)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#area">Area</a></li>
+      <li><a href="#contact" class="btn btn-primary">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="mono hero-eyebrow">Based in Dipton · County Durham</p>
+      <h1>Built right.<br/>Done properly.</h1>
+      <p class="hero-sub">Property development, joinery, scaffolding and renovation — done by the men who actually turn up and do the work.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" onclick="openQuoteModal();return false;">Get a free quote</a>
+        <a href="tel:07526502794" class="btn btn-outline">Call us</a>
+      </div>
+      <p class="hero-phone" style="margin-top:1.25rem;">Or ring straight away: <a href="tel:07526502794">07526 502794</a></p>
+    </div>
+
+    <div class="hero-motif" aria-hidden="true">
+      <div class="motif-card">
+        <div class="motif-num">10+</div>
+        <div class="motif-label">Years experience</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-num">NW</div>
+        <div class="motif-label">County Durham</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-num">2</div>
+        <div class="motif-label">Specialist trades</div>
+      </div>
+      <div class="motif-card">
+        <div class="motif-num">✓</div>
+        <div class="motif-label">Free quotes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Quote CTA bar ───────────────────────────────────────────── -->
+<div id="quote-bar" role="complementary" aria-label="Quick quote">
+  <div class="container">
+    <p><strong>Not sure where to start?</strong> Click below and we'll get back to you with a no-obligation quote.</p>
+    <button id="quote-bar-btn" onclick="openQuoteModal()" aria-haspopup="dialog">Click for a Quote</button>
+  </div>
+</div>
+
+<!-- ── Services ───────────────────────────────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="services-intro">
+      <p class="mono" style="color:var(--oak)">What we do</p>
+      <h2>Trades you can trust</h2>
+      <p>We don't subcontract. Whatever you need, it's us who turns up — qualified tradesmen who take pride in a job well done.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Property Development</h3>
+        <p>We buy, renovate and develop residential and commercial properties across County Durham — managing the whole project from purchase through to completion.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🪵</div>
+        <h3>Joinery</h3>
+        <p>Bespoke and fitted joinery: doors, frames, staircases, kitchens, windows and more. Crafted to last, fitted to fit.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔩</div>
+        <h3>Scaffolding</h3>
+        <p>Safe, reliable scaffold erection and dismantling for jobs of all sizes — residential and commercial. Fully insured and certified.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔨</div>
+        <h3>Renovation & Handyman</h3>
+        <p>Extensions, refurbs, repairs and all the smaller jobs that need doing properly. No job too small if it's worth doing right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Our Work ────────────────────────────────────────────────── -->
+<section id="work">
+  <div class="container">
+    <p class="mono" style="color:var(--oak)">Portfolio</p>
+    <h2>Our work</h2>
+    <p class="section-sub">A selection of recent projects across NW County Durham.</p>
+    <div class="gallery">
+      <!-- Photos go in /assets/img/ — replace placeholders in Phase 4 -->
+      <div class="gallery-item">
+        <div class="gallery-placeholder">Photo coming soon</div>
+        <div class="gallery-caption">
+          <strong>PLACEHOLDER — Project name</strong>
+          <span>Location · Type of work</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">Photo coming soon</div>
+        <div class="gallery-caption">
+          <strong>PLACEHOLDER — Project name</strong>
+          <span>Location · Type of work</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">Photo coming soon</div>
+        <div class="gallery-caption">
+          <strong>PLACEHOLDER — Project name</strong>
+          <span>Location · Type of work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About / Team ───────────────────────────────────────────── -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <p class="mono" style="color:var(--oak)">About us</p>
+      <h2>Two tradesmen.<br/>No shortcuts.</h2>
+      <p>RF Properties was built on a simple idea: do the work yourself, do it properly, and treat every job like it's your own home.</p>
+      <p>Between us we cover joinery, scaffolding, property development and general renovation. We work across NW County Durham and take on both domestic and commercial jobs.</p>
+      <p style="margin-top:1.5rem;"><a href="#contact" class="btn btn-primary">Talk to us</a></p>
+    </div>
+    <div class="team-cards">
+      <!-- Phase 1: replace PLACEHOLDER names and bios -->
+      <div class="team-card">
+        <p class="mono team-role">Co-founder · Joiner</p>
+        <h3>Ryan Smailes</h3>
+        <p class="team-bio">Ryan is the joiner of the pair — from custom staircases to full-house refurbs, he does the work and does it right.</p>
+      </div>
+      <div class="team-card">
+        <p class="mono team-role">Co-founder · Scaffolder &amp; Handyman</p>
+        <h3>Fynn George</h3>
+        <p class="team-bio">Fynn is a fully certified scaffolder with a full toolkit for everything in between — no job too small, no call-out too awkward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Area ───────────────────────────────────────────────────── -->
+<section id="area">
+  <div class="container area-grid">
+    <div class="area-text">
+      <p class="mono" style="color:var(--oak)">Where we work</p>
+      <h2>NW County Durham & beyond</h2>
+      <p>Based in Dipton, we cover a wide area across North West County Durham. If your village isn't listed, just ask — we travel for the right job.</p>
+      <p class="area-note">Not sure if we cover you? <a href="#contact" style="color:var(--oak);font-weight:600;">Drop us a message.</a></p>
+    </div>
+    <div>
+      <div class="area-list" role="list" aria-label="Areas covered">
+        <span class="area-tag" role="listitem">Dipton</span>
+        <span class="area-tag" role="listitem">Consett</span>
+        <span class="area-tag" role="listitem">Stanley</span>
+        <span class="area-tag" role="listitem">Lanchester</span>
+        <span class="area-tag" role="listitem">Burnopfield</span>
+        <span class="area-tag" role="listitem">Annfield Plain</span>
+        <span class="area-tag" role="listitem">Leadgate</span>
+        <span class="area-tag" role="listitem">Durham</span>
+        <span class="area-tag" role="listitem">Pontop</span>
+        <span class="area-tag" role="listitem">Catchgate</span>
+        <span class="area-tag" role="listitem">Flint Hill</span>
+        <span class="area-tag" role="listitem">Craghead</span>
+        <span class="area-tag" role="listitem">Oxhill</span>
+        <span class="area-tag" role="listitem">South Moor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <p class="mono" style="color:var(--oak)">Get in touch</p>
+      <h2>Free quotes,<br/>no pressure.</h2>
+      <p>Tell us what you need and we'll get back to you quickly — usually same day.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">📞</div>
+        <div class="contact-detail-body">
+          <strong>Phone</strong>
+          <a href="tel:07526 502794">07526 502794</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">✉️</div>
+        <div class="contact-detail-body">
+          <strong>Email</strong>
+          <a href="mailto:hello@rfproperties.co.uk">hello@rfproperties.co.uk</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">📍</div>
+        <div class="contact-detail-body">
+          <strong>Based in</strong>
+          <p>Dipton, County Durham</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3 style="margin-bottom:1.5rem;">Send us a message</h3>
+      <!-- Phase 3: replace action with Formspree/Web3Forms endpoint -->
+      <form id="contact-form" action="PLACEHOLDER_FORM_ENDPOINT" method="POST" novalidate>
+        <!-- Honeypot spam field -->
+        <input class="hp-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. John Smith" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="contact">Phone or email</label>
+          <input type="text" id="contact" name="contact" placeholder="Best way to reach you" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="message">What do you need?</label>
+          <textarea id="message" name="message" placeholder="Tell us about your job — the more detail, the better." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Send message</button>
+        <div class="form-msg" id="form-success" role="alert">Thanks — we'll be in touch soon, usually same day.</div>
+        <div class="form-msg error" id="form-error" role="alert" style="display:none;">Something went wrong. Please try calling us instead.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">RF Properties</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- Phase 1: add social links here if provided -->
+      <div class="footer-social" aria-label="Social media">
+        <!-- PLACEHOLDER: uncomment and fill when social links provided
+        <a href="https://facebook.com/PLACEHOLDER" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/PLACEHOLDER" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        -->
+      </div>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> RF Properties. Based in Dipton, County Durham.</p>
+  </div>
+</footer>
+
+<!-- ── Quote modal ─────────────────────────────────────────────── -->
+<div id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="quote-modal-inner">
+    <button class="quote-modal-close" onclick="closeQuoteModal()" aria-label="Close">&#x2715;</button>
+    <!-- Ryan.png goes in /assets/img/Ryan.png -->
+    <img src="assets/img/Ryan.png" alt="Ryan from RF Properties" onerror="this.style.display='none'" />
+    <div class="quote-modal-body">
+      <h3 id="modal-title">Get a free quote</h3>
+      <p>Give us a call or drop us a message and we'll get back to you — no obligation, no hard sell.</p>
+      <a href="#contact" class="btn btn-primary" onclick="closeQuoteModal()">Send us a message</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Nav toggle (mobile)
+  function toggleNav(btn) {
+    const links = document.getElementById('nav-links');
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+
+  // Close nav on link click (mobile)
+  document.querySelectorAll('#nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Quote modal
+  function openQuoteModal() {
+    var modal = document.getElementById('quote-modal');
+    modal.classList.add('open');
+    modal.querySelector('.quote-modal-close').focus();
+    document.body.style.overflow = 'hidden';
+  }
+  function closeQuoteModal() {
+    document.getElementById('quote-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close on backdrop click
+  document.getElementById('quote-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeQuoteModal();
+  });
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeQuoteModal();
+  });
+
+  // Contact form (Phase 3: swap in real endpoint)
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var data = new FormData(form);
+
+    // Honeypot check
+    if (data.get('_honey')) return;
+
+    var btn = form.querySelector('[type=submit]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    // Phase 3: replace with actual endpoint
+    var endpoint = form.action;
+    if (!endpoint || endpoint === 'PLACEHOLDER_FORM_ENDPOINT') {
+      // Fallback during development — open mailto
+      var name    = data.get('name') || '';
+      var contact = data.get('contact') || '';
+      var message = data.get('message') || '';
+      window.location.href = 'mailto:hello@rfproperties.co.uk'
+        + '?subject=' + encodeURIComponent('Enquiry from ' + name)
+        + '&body=' + encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\n\n' + message);
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+      return;
+    }
+
+    fetch(endpoint, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(r) {
+      if (r.ok) {
+        form.reset();
+        document.getElementById('form-success').classList.add('success');
+        document.getElementById('form-error').style.display = 'none';
+      } else {
+        throw new Error('server error');
+      }
+    })
+    .catch(function() {
+      document.getElementById('form-error').style.display = 'block';
+      document.getElementById('form-success').classList.remove('success');
+    })
+    .finally(function() {
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+    });
+  });
+</script>
+</body>
+</html>
