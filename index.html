@@ -643,7 +643,7 @@
       <li><a href="#work">Our Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#area">Area</a></li>
-      <li><button class="btn btn-primary" onclick="openQuoteModal('assets/img/Ryan4.png')">Get in touch</button></li>
+      <li><button class="btn btn-primary" onclick="openQuoteModal()">Get in touch</button></li>
     </ul>
   </div>
 </nav>
@@ -732,21 +732,21 @@
     <p class="section-sub">A selection of recent projects across NW County Durham.</p>
     <div class="gallery">
       <!-- Photos go in /assets/img/ — replace placeholders in Phase 4 -->
-      <button class="gallery-item gallery-btn" onclick="openQuoteModal('assets/img/Ryan1.png')" aria-label="View project photo">
+      <button class="gallery-item gallery-btn" onclick="openQuoteModal()" aria-label="View project photo">
         <div class="gallery-placeholder">Click to view photo</div>
         <div class="gallery-caption">
           <strong>PLACEHOLDER — Project name</strong>
           <span>Location · Type of work</span>
         </div>
       </button>
-      <button class="gallery-item gallery-btn" onclick="openQuoteModal('assets/img/Ryan2.png')" aria-label="View project photo">
+      <button class="gallery-item gallery-btn" onclick="openQuoteModal()" aria-label="View project photo">
         <div class="gallery-placeholder">Click to view photo</div>
         <div class="gallery-caption">
           <strong>PLACEHOLDER — Project name</strong>
           <span>Location · Type of work</span>
         </div>
       </button>
-      <button class="gallery-item gallery-btn" onclick="openQuoteModal('assets/img/Ryan3.png')" aria-label="View project photo">
+      <button class="gallery-item gallery-btn" onclick="openQuoteModal()" aria-label="View project photo">
         <div class="gallery-placeholder">Click to view photo</div>
         <div class="gallery-caption">
           <strong>PLACEHOLDER — Project name</strong>
@@ -765,7 +765,7 @@
       <h2>Two tradesmen.<br/>No shortcuts.</h2>
       <p>RF Properties was built on a simple idea: do the work yourself, do it properly, and treat every job like it's your own home.</p>
       <p>Between us we cover joinery, scaffolding, property development and general renovation. We work across NW County Durham and take on both domestic and commercial jobs.</p>
-      <p style="margin-top:1.5rem;"><button class="btn btn-primary" onclick="openQuoteModal('assets/img/Ryan1.png')">Talk to us</button></p>
+      <p style="margin-top:1.5rem;"><button class="btn btn-primary" onclick="openQuoteModal()">Talk to us</button></p>
     </div>
     <div class="team-cards">
       <!-- Phase 1: replace PLACEHOLDER names and bios -->
@@ -778,7 +778,7 @@
         <p class="mono team-role">Co-founder · Scaffolder &amp; Handyman</p>
         <h3>Fynn George</h3>
         <p class="team-bio">Fynn is a fully certified scaffolder with a full toolkit for everything in between — no job too small, no call-out too awkward.</p>
-        <button class="btn btn-primary" style="margin-top:1rem;padding:0.5rem 1.25rem;font-size:0.9rem;" onclick="openQuoteModal('assets/img/Ryan5.png')">Meet Fynn</button>
+        <button class="btn btn-primary" style="margin-top:1rem;padding:0.5rem 1.25rem;font-size:0.9rem;" onclick="openQuoteModal()">Meet Fynn</button>
       </div>
     </div>
   </div>
@@ -932,11 +932,12 @@
     });
   });
 
-  // Quote modal — pass an optional image src to swap the photo
-  function openQuoteModal(imgSrc) {
+  var ryanImgs = ['assets/img/Ryan.png','assets/img/Ryan1.png','assets/img/Ryan2.png','assets/img/Ryan3.png','assets/img/Ryan4.png','assets/img/Ryan5.png'];
+
+  function openQuoteModal() {
     var modal = document.getElementById('quote-modal');
     var img = modal.querySelector('img');
-    img.src = imgSrc || 'assets/img/Ryan.png';
+    img.src = ryanImgs[Math.floor(Math.random() * ryanImgs.length)];
     modal.classList.add('open');
     modal.querySelector('.quote-modal-close').focus();
     document.body.style.overflow = 'hidden';
